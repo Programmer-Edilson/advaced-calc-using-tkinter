@@ -1,4 +1,4 @@
-# advaced-calc-using-tkinter
+# advanced-calc-using-tkinter
 This is a simples calculator in Python using tkinter library
 
 # Demo
