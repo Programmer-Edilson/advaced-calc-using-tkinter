@@ -6,7 +6,7 @@ def percent():
     f_num.set(float(first_number))
     delete_entry()
     label_value.set(str(first_number) + " % of ")
-    singal.set(1)
+    signal.set(1)
 
 def type_number(number):
     first_number = entry.get()
@@ -23,16 +23,16 @@ def calc_perc():
     l_n = float(entry.get())
     f_n = f_num.get()
 
-    result = (l_n * f_n) / 100
+    result = ((l_n * f_n) / 100)
     delete_entry()
     entry.insert(0, result)
     last_label_value = label_value.get()
     label_value.set(last_label_value + str(l_n))
 
 def iqual():
-    if singal.get() == 1:
+    if signal.get() == 1:
         calc_perc()
-        singal.set(0)
+        signal.set(0)
     else:
         brute_terms = entry.get()
 
@@ -40,6 +40,7 @@ def iqual():
             terms = brute_terms.replace("x", "*")
             terms = brute_terms.replace("÷", "/")
         except:
+            print("Replace Exception")
             pass
         
         try:
@@ -78,8 +79,8 @@ l_num = DoubleVar()
 operation = StringVar()
 label_value = StringVar()
 
-singal = IntVar()
-singal.set(0)
+signal = IntVar()
+signal.set(0)
 # declaring widgets
 
 label = Label(root, textvariable = label_value, bg = "cyan", font = ("anonymous", 10))
